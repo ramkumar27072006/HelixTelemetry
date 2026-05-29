@@ -1,0 +1,13 @@
+# .gitignore
+venv/
+__pycache__/
+.env
+.streamlit/secrets.toml
+
+# Data & Telemetry (Keep these local, push only the necessary ChromaDB for the cloud)
+data/raw/
+data/telemetry/
+chroma_db/
+
+# Note: For Streamlit Cloud, you CAN push your ChromaDB folder if it is under 1GB.
+# If it is larger, ignore it here and write a startup script to rebuild it on boot.

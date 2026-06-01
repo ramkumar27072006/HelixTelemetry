@@ -55,7 +55,7 @@ Streamlit's default aesthetic was entirely overridden via aggressive CSS DOM inj
 
 **1. Clone the repository:**
 ```bash
-git clone https://github.com/your-username/HelixTelemetry.git
+git clone https://github.com/ramkumar27072006/HelixTelemetry.git
 cd HelixTelemetry
 ```
 

@@ -21,7 +21,11 @@ StateManager.initialize_session()
 # Load Backend Engines into cache so they don't reload on every keystroke
 @st.cache_resource
 def load_engines():
+    # Attempt to load from OS environment first, fallback to Streamlit Secrets
     api_key = os.getenv("GROQ_API_KEY")
+    if not api_key and "GROQ_API_KEY" in st.secrets:
+        api_key = st.secrets["GROQ_API_KEY"]
+        
     router = EnterpriseClinicalRouter(api_key=api_key)
     streamer = EnterpriseAsyncStreamEngine(api_key=api_key)
     visualizer = TelemetryVisualizer()
